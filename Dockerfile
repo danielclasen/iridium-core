@@ -45,5 +45,10 @@ RUN apt-get update && apt-get install -y \
     && apt-get autoremove -y \
     && apt-get clean
 
+RUN mkdir /data
+
+EXPOSE 12007/tcp
+EXPOSE 13007/tcp
+EXPOSE 14007/tcp
 
 CMD sh
