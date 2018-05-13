@@ -45,10 +45,17 @@ RUN apt-get update && apt-get install -y \
     && apt-get autoremove -y \
     && apt-get clean
 
-RUN mkdir /data
+RUN mkdir /data \
+    && useradd -ms /bin/bash iridium \
+    && chown -R iridium /data \
+    && chmod 777 -R /data \
+    && chmod 777 /iridium
+
+USER iridium
+WORKDIR /data
 
 EXPOSE 12007/tcp
 EXPOSE 13007/tcp
 EXPOSE 14007/tcp
 
-CMD sh
+CMD /bin/bash
