@@ -1,6 +1,6 @@
 FROM debian:stretch-slim
 
-ARG IRIDIUM_SRC=https://github.com/iridiumdev/iridium/archive/v4.0.1.tar.gz
+ARG IRIDIUM_SRC=https://github.com/iridiumdev/iridium/archive/v4.0.2.tar.gz
 
 RUN apt-get update && apt-get install -y \
     build-essential \
